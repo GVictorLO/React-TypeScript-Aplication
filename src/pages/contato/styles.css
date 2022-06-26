@@ -1,0 +1,14 @@
+.LinkHome {
+    color: #2E948A;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.contatoSection {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}

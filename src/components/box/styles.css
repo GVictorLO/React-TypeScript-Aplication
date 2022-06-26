@@ -1,0 +1,15 @@
+.box {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+.escuro {
+    background-color: grey;
+
+}
+
+.claro {
+    background-color: white;
+}
