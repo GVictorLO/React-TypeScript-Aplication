@@ -1,32 +1,25 @@
 import React from 'react';
 import Header from '../../components/header'
+import Footer from '../../components/footer'
 import Box from '../../components/box'
-import '../../styles/global.css';
+import * as GS from '../../styles/globalStyle';
 
 function Home() {
-
-    const contatoAlert = () => {
-        alert('Vá para a aba de contatos! :)');
-    }
-
 
     return (
         <div className='App'>
             <Header />
             <main>
-                < Box background="claro">
-                    <div>
-                        <h1>Apenas um exercício de React</h1>
-                        <p className='texto' >Uma aplicação com React explorando várias funcionalidades! <br />Para saber mais basta clicar aqui embaixo!</p>
-                        <button className='button' onClick={contatoAlert}>quero saber mais</button>
-                    </div>
+                <Box>
+                    <h1>(Hello, seja bem vindo)</h1>
                 </Box>
-                < Box background="claro">
-                    <h1>Algumas funcionalidades da Home Page!!</h1>
-                </Box>
+                <Box><></></Box>
             </main>
+            <Footer />
         </div>
     );
 }
+
+
 
 export default Home;

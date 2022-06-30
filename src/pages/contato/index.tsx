@@ -1,9 +1,7 @@
 import Header from '../../components/header';
-import { Link } from 'react-router-dom';
 import { useState } from 'react'
 
-import './styles.css'
-import '../../styles/global.css';
+import * as GS from '../../styles/globalStyle';
 
 function Contato() {
     const [email, setEmail] = useState([]);
@@ -13,12 +11,12 @@ function Contato() {
             < Header />
             <section className="contatoSection">
                 <h1>Pagina de contatos</h1>
-                <p className="texto">Insira seu melhor email para entrarmos em contato!</p>
+                <GS.Texto>Insira seu melhor email para entrarmos em contato!</GS.Texto>
                 <div>
                     <input />
                     <button>enviar email</button>
                 </div>
-                <Link className='LinkHome' to="/">Home Page</Link>
+                <GS.LinkHome to="/">Home Page</GS.LinkHome>
             </section>
         </div>
     )

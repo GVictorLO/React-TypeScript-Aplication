@@ -1,11 +1,11 @@
 import Header from '../../components/header'
+import Footer from '../../components/footer'
 import TaskItem from '../../components/taskItem'
-import { Link } from 'react-router-dom'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
-import './styles.css'
-import '../../styles/global.css';
+import * as S from './styles'
+import * as GS from '../../styles/globalStyle';
 
 interface Tarefa {
     titulo: string;
@@ -44,14 +44,14 @@ function TaskManager() {
     return (
         <div>
             < Header />
-            <section className="contatoSection">
+            <S.ContatoSection>
                 <h1>Task Manager</h1>
-                <p className="texto">Obrigado por testar o task manager!!</p>
+                <GS.Texto>Obrigado por testar o task manager!!</GS.Texto>
                 <div>
-                    <input className='inputStyle' value={tituloTarefa} onChange={(event) => { setTituloTarefa(event.target.value) }} />
-                    <button className="button" onClick={adicionarTarefa}>adicionar tarefa</button>
+                    <S.InputStyle value={tituloTarefa} onChange={(event) => { setTituloTarefa(event.target.value) }} />
+                    <GS.StyledButton onClick={adicionarTarefa}>adicionar tarefa</GS.StyledButton>
                 </div>
-                <div className="taskContainer">
+                <S.TaskContainer>
                     {
                         tarefas.map((tarefa: Tarefa, posicao: number) => {
                             return (
@@ -62,9 +62,10 @@ function TaskManager() {
                             )
                         })
                     }
-                </div>
-                <Link className='LinkHome' to="/">Home Page</Link>
-            </section>
+                </S.TaskContainer>
+                <GS.LinkHome to="/">Home Page</GS.LinkHome>
+            </S.ContatoSection>
+            <Footer />
         </div>
     )
 }

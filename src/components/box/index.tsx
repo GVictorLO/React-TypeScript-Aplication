@@ -1,17 +1,16 @@
-import './styles.css';
+import * as S from './styles'
 
 interface BoxProps {
-    background: string;
     children: JSX.Element;
 }
 
 
 function Box(props: BoxProps) {
     return (
-        <section className={`box ${props.background}`} >
+        <S.box>
             {props.children}
-        </section>
+        </S.box>
     )
 };
 
-export default Box;
+export default Box; 

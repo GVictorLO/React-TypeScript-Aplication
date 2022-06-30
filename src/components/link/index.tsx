@@ -1,5 +1,4 @@
-import './styles.css'
-import { Link as LinkRoute, Navigate } from 'react-router-dom';
+import * as S from './styles'
 
 interface LinkProps {
     texto: string;
@@ -7,8 +6,8 @@ interface LinkProps {
 
 function Link(props: LinkProps) {
     return (
-        <LinkRoute className="LinkMenu" to={props.texto} replace={true}>{props.texto}</LinkRoute>
+        <S.LinkMenu to={props.texto} >{props.texto}</S.LinkMenu>
     )
 }
 
-export default Link;
+export default Link; 

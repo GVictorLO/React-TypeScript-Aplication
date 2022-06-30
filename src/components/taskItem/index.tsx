@@ -1,5 +1,4 @@
-import { isPropertySignature, JsxTokenSyntaxKind } from 'typescript';
-import './styles.css'
+import * as S from './styles';
 
 interface TaskItemProps {
     titulo: string;
@@ -8,14 +7,25 @@ interface TaskItemProps {
     desfazerTarefa: () => void;
 }
 
+
 function TaskItem(props: TaskItemProps) {
-    return (
-        <li className={`taskItem${props.done}`} >
+    let taskItem;
+
+    if (props.done === true) {
+        taskItem = <S.taskItemTrue>
             <span onClick={props.desfazerTarefa}>❌</span>
             {props.titulo}
             <span onClick={props.concluirTarefa}>✔️</span>
-        </li >
-    )
+        </S.taskItemTrue>
+    } else {
+        taskItem = <S.taskItemFalse>
+            <span onClick={props.desfazerTarefa}>❌</span>
+            {props.titulo}
+            <span onClick={props.concluirTarefa}>✔️</span>
+        </S.taskItemFalse >
+    }
+
+    return (taskItem)
 }
 
-export default TaskItem;
+export default TaskItem;  
